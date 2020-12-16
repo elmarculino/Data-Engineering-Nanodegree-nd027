@@ -20,7 +20,7 @@ dag = DAG('udac_example_dag',
           schedule_interval='0 * * * *'
         )
 
-start_operator = DummyOperator(task_id='Begin_execution',  dag=dag)
+start_operator = DummyOperator(task_id='Begin_execution', dag=dag)
 
 stage_events_to_redshift = StageToRedshiftOperator(
     task_id='Stage_events',
@@ -62,4 +62,4 @@ run_quality_checks = DataQualityOperator(
     dag=dag
 )
 
-end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
+end_operator = DummyOperator(task_id='Stop_execution', dag=dag)
